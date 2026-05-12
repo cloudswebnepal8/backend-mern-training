@@ -39,6 +39,7 @@ import { useState } from "react";
 import API from "../api";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Register from './Register';
 
 export default function Login() {
   const [step, setStep] = useState(1);
@@ -70,7 +71,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-md">
-        
+
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-700">
           {step === 1 ? "Login" : "Verify OTP"}
         </h2>
@@ -80,7 +81,7 @@ export default function Login() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mb-4 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               onChange={(e) =>
                 setData({ ...data, email: e.target.value })
               }
@@ -89,7 +90,7 @@ export default function Login() {
             <input
               type="password"
               placeholder="Password"
-              className="w-full mb-4 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full mb-4 px-4 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               onChange={(e) =>
                 setData({ ...data, password: e.target.value })
               }
@@ -101,6 +102,15 @@ export default function Login() {
             >
               Send OTP
             </button>
+            <p className="text-sm text-center text-gray-500 mt-4">
+              Don't have an account?{" "}
+              <span
+                className="text-blue-600 cursor-pointer"
+                onClick={() => (window.location = "/")}
+              >
+                Register
+              </span>
+            </p>
           </>
         ) : (
           <>
@@ -119,6 +129,8 @@ export default function Login() {
             >
               Verify & Login
             </button>
+
+
           </>
         )}
       </div>
