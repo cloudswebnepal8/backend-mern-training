@@ -1,15 +1,3 @@
-// export default function Dashboard() {
-//   const token = localStorage.getItem("token");
-
-//   if (!token) return <h2>Please Login</h2>;
-
-//   return (
-//     <div>
-//       <h1>Dashboard</h1>
-//       <p>Welcome! You are logged in for 30 minutes.</p>
-//     </div>
-//   );
-// }
 
 import { useEffect, useState } from "react";
 import API from "../api";
